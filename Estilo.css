@@ -1,0 +1,245 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100&display=swap');
+
+/* Seletor universal */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+/* O:root pode ser útil para declarar uma variável CSS global: */
+:root {
+    --red: #ff0000;
+    --white: #fff;
+    --dark: #1e1e1e;
+}
+/* corpo do site */
+body {
+    color: var(dark);
+    background: var(white);
+}
+
+/* Navegação */
+
+.navegation {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
+}
+
+/* Logo */
+
+.navegation .logo {
+    color: var(--red);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+/* Span dentro da logo */
+
+.logo span {
+    color: var(--dark);
+}
+
+/* links do menu */
+
+.navegation ul{
+    display: flex;
+    align-items: center;
+    /* A propriedade CSS define as lacunas ( medianizes ) entre linhas e colunas. É uma abreviação para e .gap row-gapcolumn-gap */
+    gap: 4rem;
+} 
+/* Links do menu */
+
+.navegation ul li a {
+    color: var(--dark);
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+/* Links do menu */
+
+.navegation ul li a:hover{
+    color: var(--red);
+}
+/* ícone de busca  */
+
+.navegation img {
+    cursor: pointer;
+
+}
+/* Menu mobile */
+
+.menu{
+    cursor: pointer;
+    display: none;
+}
+/* Menu mobile */
+
+.menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+/* trocando as cores das barras */
+
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3) {
+    background: var(--red);
+}
+
+/* FINAL DO ESTILO DO HEADER */
+
+/* COMEÇO ESTILO MAIN */
+
+.home {
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 10%;
+}
+.home-text {
+max-width: 37rem;
+}
+
+/* Edição de titulo */
+.home-text .text-h4 {
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+/* Edição de titulo */
+.home-text .text-h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+/* Edição de paragrafo */
+.home-text p {
+    margin-bottom: 2rem;
+}
+/* Edição de botão  */
+.home-btn{
+
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+
+}
+
+.home-btn:hover{
+    background: var(--dark);
+}
+
+.home-img img{
+    width: 100%;
+}
+ /* FINALIZA A  MAIN */
+
+ /* COMEÇO RODAPÉ */
+
+ .rodape {
+    background: var(--red);
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+ }
+
+ .home-text-footer p {
+
+    text-align: left;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 400;
+ }
+
+ /* FINALIZA O RODAPÉ */
+
+ /* COMEÇA O RESPONSIVO  */
+
+ @media (max-width:785px){
+
+    /* COMEÇA O HEADER */
+   .navegation{
+    padding: 18px 20px;
+   } 
+   .menu{
+    display: block;
+   }
+   .menu.ativo .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+
+   }
+   .menu.ativo .bar:nth-child(2){
+    opacity: 0;
+   }
+   .menu.ativo .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+
+   }
+   .navmenu.ativo{
+    right: 0;
+   }
+    .navmenu{
+    position:fixed; 
+    right: 100%;
+    top: 70px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background:var(--white);
+    gap: -10px;
+    transition: 0.3s;
+   }
+   .menu-item{
+    margin: 16px 0;
+   }
+/* ACABA O HEADER */
+
+/* COMEÇA O MAIN  */
+.home{
+    padding: 100px 2%;
+     flex-direction: column;
+     text-align: center;
+     /* Para não criar barra de rolagem  */
+     
+     gap: 5rem;
+}
+.home .text-h4{
+    font-size: 14px;
+}
+.home .text-h1{
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+.home p {
+    font-size: 14px;
+}
+
+.home img{
+ width: 70%;
+}
+.final {
+    margin-top: 100px;
+}
+
+ }
